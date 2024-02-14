@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>book store</title>
+    <link rel="stylesheet" href="book.css" />
+  </head>
+  <body>
+    <form onsubmit="submitData(event)">
+      <table>
+        <caption>
+          Book management
+        </caption>
+        <tr>
+          <td><label for="">Enter Book Name</label></td>
+          <td><input type="text" name="bname" id="bname" required /></td>
+        </tr>
+        <tr>
+          <td><label for="">Enter Book Author</label></td>
+          <td><input type="text" name="bauthor" id="bauthor" required /></td>
+        </tr>
+        <tr>
+          <td><label for="">Enter Book Descripation</label></td>
+          <td><input type="text" name="bdesc" id="bdesc" required /></td>
+        </tr>
+        <tr>
+          <td><label for="">Enter Book page no</label></td>
+          <td><input type="number" name="bpageno" id="bpageno" required /></td>
+        </tr>
+        <tr>
+          <td><label for="">Enter Book category</label></td>
+          <td>
+            <input type="text" name="bcategory" id="bcategory" required />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="">Enter Book price</label></td>
+          <td><input type="number" name="bprice" id="bprice" required /></td>
+        </tr>
+        <tr>
+          <td><label for="">Enter Book Release Year</label></td>
+          <td><input type="number" name="byear" id="byear" required /></td>
+        </tr>
+        <tr>
+          <td><button type="submit" id="add">Add</button></td>
+          <td><button type="button" onclick="updateData()" id="update">Update</button></td>
+        </tr>
+      </table>
+    </form>
+    <div class="button">
+      <div class="form-btn">
+        <button type="button" onclick="renderData(bookData)">Show</button>
+      </div>
+      <div class="form-btn">
+        <button type="button" onclick="showById()">showById</button>
+      </div>
+      <div class="form-btn">
+        <button type="button" onclick="showByName()">showByBookName</button>
+      </div>
+      <div class="form-btn">
+        <button type="button" onclick="showByAuthorBName()">
+          show By AuthorName & BookName
+        </button>
+      </div>
+      <div class="form-btn">
+        <button type="button" onclick="showByRelease()">
+          Show By Release
+        </button>
+      </div>
+      <div class="form-btn">
+        <button type="button" onclick="searchExist()">SearchExist</button>
+      </div>
+    <hr>
+    <div class="form-btn">
+      <button type="button" onclick="showByHighPrice()">
+        Show Highest price
+      </button>
+    </div>
+    <div class="form-btn">
+      <button type="button" onclick="showByPage100()">
+        Show By Page < 100
+      </button>
+    </div>
+    <div class="form-btn">
+      <button type="button" onclick="showByPage25()">
+        Show By Page 25 < page > 90
+      </button>
+    </div>
+    <div class="form-btn">
+      <button type="button" onclick="showByPage80()">
+        Show By Page 25 < page > 90 != 80
+      </button>
+    </div>
+    <div class="form-btn">
+      <button type="button" onclick="showByPage0()">
+        Show By Page ===0
+      </button>
+    </div>
+    <hr>
+    <div class="form-btn">
+      <button type="button" onclick="deleteById()">
+        Delete By Id
+      </button>
+    </div>
+    <div class="form-btn">
+      <button type="button" onclick="deleteByName()">
+        Delete By Name
+      </button>
+    </div>
+    <div class="form-btn">
+      <button type="button" onclick="deleteByAuthor()">
+        Delete By Author & Descripation
+      </button>
+    </div>
+    <div class="form-btn">
+      <button type="button" onclick="deleteByBook()">
+        Delete By Book Name & Category
+      </button>
+    </div><hr>
+    <div class="form-btn">
+      <button type="button" onclick="updateById()">
+        Update By Book Id
+      </button>
+    </div>
+    <div class="form-btn">
+      <button type="button" onclick="updateByName()">
+        Update By Book Name
+      </button>
+    </div>
+    <div class="form-btn">
+      <button type="button" onclick="updateByBookName()">
+        Update By Book Name & Author Name
+      </button>
+    </div><hr>
+    <div class="form-btn">
+      <button type="button" onclick="sortData('bname')">
+        Sort By Name
+      </button>
+    </div>
+    <div class="form-btn">
+      <button type="button" onclick="sortData('bprice')">
+        Sort By Price
+      </button>
+    </div>
+    <div class="form-btn">
+      <button type="button" onclick="sortData('bauthor')">
+        Sort By  Book Author
+      </button>
+    </div>
+    <div class="form-btn">
+      <button type="button" onclick="sortData('bpageno')">
+        Sort By Page
+      </button>
+    </div>
+    <div class="form-btn">
+      <button type="button" onclick="sortData('bcategory')">
+        Sort By Category
+      </button>
+    </div>
+    <div class="form-btn">
+      <button type="button" onclick="sortData('byear')">
+        Sort By Release Year
+      </button>
+    </div>
+
+  </div>
+
+    <section class="data">
+      <table class="showdata">
+        <thead>
+          <th>Bid</th>
+          <th>BookName</th>
+          <th>BookAuthor</th>
+          <th>BookDesc</th>
+          <th>BookPageno</th>
+          <th>BookCategory</th>
+          <th>BookPrice</th>
+          <th>Release year</th>
+        </thead>
+        <tbody id="bookData"></tbody>
+      </table>
+    </section>
+    <script src="./book.js"></script>
+  </body>
+</html>

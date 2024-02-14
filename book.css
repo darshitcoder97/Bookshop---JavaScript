@@ -1,0 +1,36 @@
+.showdata{
+    border: 1px solid black;
+    margin: auto;
+}
+.showdata thead th{
+    border: 1px solid black;
+    padding: 0.5rem;
+}
+.showdata tbody tr td{
+    border: 1px solid black;
+    padding: 0.5rem;
+}
+
+table.showdata {
+    margin-top: 2rem;
+}
+table{
+    margin: auto;
+    margin-top: 1rem;
+}
+caption{
+    font-size: 30px;
+    padding: 1rem;
+}
+.form-btn{
+    display: inline-block;
+}
+.form-btn button{
+    margin: auto;
+    cursor: pointer;
+}
+.button {
+    margin-left: 471px;
+    margin-top: 40px;
+    
+}
